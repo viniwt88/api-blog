@@ -2107,11 +2107,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\vinicius.watanabe\\source\\repos\\blogApi\\blogApi.csproj",
+      "projectUniqueName": "C:\\Users\\vinicius.watanabe\\source\\repos\\api-blog\\blogApi.csproj",
       "projectName": "blogApi",
-      "projectPath": "C:\\Users\\vinicius.watanabe\\source\\repos\\blogApi\\blogApi.csproj",
+      "projectPath": "C:\\Users\\vinicius.watanabe\\source\\repos\\api-blog\\blogApi.csproj",
       "packagesPath": "C:\\Users\\vinicius.watanabe\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\vinicius.watanabe\\source\\repos\\blogApi\\obj\\",
+      "outputPath": "C:\\Users\\vinicius.watanabe\\source\\repos\\api-blog\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\vinicius.watanabe\\AppData\\Roaming\\NuGet\\NuGet.Config",

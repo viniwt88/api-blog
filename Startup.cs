@@ -1,18 +1,18 @@
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Microsoft.OpenApi.Models;
-using System;
-using System.Text;
-using blogApi.Interfaces;
+using blogApi.DbContext;
 using blogApi.Interfaces.Repositories;
 using blogApi.Interfaces.Services;
 using blogApi.Repositories;
 using blogApi.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
+using System.Text;
 
 
 namespace blogApi
@@ -29,6 +29,10 @@ namespace blogApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // Conexão com a base de dados
+            services.AddDbContext<BlogContext>(options => options.UseNpgsql(
+                Configuration.GetConnectionString("db_blog")));
+
             // habilitando o swagger
             services.AddControllers();
             services.AddSwaggerGen(c =>

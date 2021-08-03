@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using blogApi.Models;
+﻿using blogApi.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace blogApi.DbContext.Mappings
@@ -18,7 +14,7 @@ namespace blogApi.DbContext.Mappings
             modelBuilder.Entity<Album>()
                 .Property(a => a.AlbumId)
                 .HasColumnName("album_id");
-            
+
             modelBuilder.Entity<Album>()
                 .Property(a => a.AlbumName)
                 .HasColumnName("album_name");

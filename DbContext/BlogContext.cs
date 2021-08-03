@@ -1,4 +1,5 @@
-﻿using blogApi.Models;
+﻿using blogApi.DbContext.Mappings;
+using blogApi.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace blogApi.DbContext
@@ -23,7 +24,14 @@ namespace blogApi.DbContext
             // Mapeamento schema para PostgreSql
             modelBuilder.HasDefaultSchema("public");
 
+            // Configurando a relação entre o  orm e o banco
+            PostMap.Configure(modelBuilder);
+            UserMap.Configure(modelBuilder);
+            PhotoMap.Configure(modelBuilder);
+            AlbumMap.Configure(modelBuilder);
+            CommentMap.Configure(modelBuilder);
 
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lILZm4SewoFLCsATj0vGBh1mfEPvq9IvYxpNcw/P0DGN1nGUHB8EaUhXZZIGhGGKYvsyXf8HvI8vY8+G9ZJ8sA==",
+  "dgSpecHash": "tS+rLsH/Y/on+ddsO4Gj0irIBHxCxm4vpkNJM+KUAOBHpUu2EfneTutcMcI4mZlHVMa7nb6V60f+BEbR+K1Ncw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\vinicius.watanabe\\source\\repos\\blogApi\\blogApi.csproj",
+  "projectFilePath": "C:\\Users\\vinicius.watanabe\\source\\repos\\api-blog\\blogApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\vinicius.watanabe\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
     "C:\\Users\\vinicius.watanabe\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
