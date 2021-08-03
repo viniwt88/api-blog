@@ -26,7 +26,7 @@ namespace blogApi.Repositories
 
         public int Commit()
         {
-            return 0;
+            return 1;
         }
 
         public void Update(Album entity)
