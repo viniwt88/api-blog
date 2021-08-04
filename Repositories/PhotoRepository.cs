@@ -1,11 +1,17 @@
-﻿using System.Collections.Generic;
-using blogApi.Interfaces.Repositories;
+﻿using blogApi.Interfaces.Repositories;
 using blogApi.Models;
+using System.Collections.Generic;
+using blogApi.DbContext;
+using Microsoft.EntityFrameworkCore;
 
 namespace blogApi.Repositories
 {
-    public class PhotoRepository : IPhotoRepository, IRepositoryBase<Photo>
+    public class PhotoRepository : RepositoryBase<Photo>, IPhotoRepository 
     {
+        public PhotoRepository(BlogContext context, DbSet<Photo> dbSet) : base(context, dbSet)
+        {
+        }
+
         public void Add(Photo entity)
         {
         }

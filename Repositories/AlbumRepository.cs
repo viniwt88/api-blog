@@ -1,11 +1,17 @@
-﻿using System.Collections.Generic;
-using blogApi.Interfaces.Repositories;
+﻿using blogApi.Interfaces.Repositories;
 using blogApi.Models;
+using System.Collections.Generic;
+using blogApi.DbContext;
+using Microsoft.EntityFrameworkCore;
 
 namespace blogApi.Repositories
 {
-    public class AlbumRepository : IAlbumRepository,  IRepositoryBase<Album>
+    public class AlbumRepository : RepositoryBase<Album>, IAlbumRepository
     {
+        public AlbumRepository(BlogContext context, DbSet<Album> dbSet) : base(context, dbSet)
+        {
+        }
+
         public void Add(Album entity)
         {
         }

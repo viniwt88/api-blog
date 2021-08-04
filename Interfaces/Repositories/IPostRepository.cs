@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using blogApi.Models;
 
 namespace blogApi.Interfaces.Repositories
 {
-    interface IPostRepository
+    interface IPostRepository : IRepositoryBase<Post>
     {
     }
 }

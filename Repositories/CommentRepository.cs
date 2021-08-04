@@ -1,11 +1,17 @@
-﻿using System.Collections.Generic;
+﻿using blogApi.DbContext;
 using blogApi.Interfaces.Repositories;
 using blogApi.Models;
+using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 
 namespace blogApi.Repositories
 {
-    public class CommentRepository : ICommentRepository, IRepositoryBase<Comment>
+    public class CommentRepository : RepositoryBase<Comment>, ICommentRepository
     {
+        public CommentRepository(BlogContext context, DbSet<Comment> dbSet) : base(context, dbSet)
+        {
+        }
+
         public void Add(Comment entity)
         {
         }

@@ -13,7 +13,8 @@ namespace blogApi.Services
 
         public bool RealizarPostagem(Post post)
         {
-            return true;
+            _postRepository.Add(post);
+            return _postRepository.Commit() > 0;
         }
     }
 }

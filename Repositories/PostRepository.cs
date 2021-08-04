@@ -1,12 +1,15 @@
-﻿using System;
+﻿using blogApi.Interfaces.Repositories;
+using blogApi.Models;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using blogApi.Interfaces.Repositories;
+using blogApi.DbContext;
+using Microsoft.EntityFrameworkCore;
 
 namespace blogApi.Repositories
 {
-    public class PostRepository : IPostRepository
+    public class PostRepository :  RepositoryBase<Post>, IPostRepository
     {
+        public PostRepository(BlogContext context, DbSet<Post> dbSet) : base(context, dbSet)
+        {
+        }
     }
 }

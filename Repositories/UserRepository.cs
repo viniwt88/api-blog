@@ -1,22 +1,27 @@
-﻿using System;
+﻿using blogApi.DbContext;
+using blogApi.Interfaces.Repositories;
+using blogApi.Models;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using blogApi.Interfaces.Repositories;
-using blogApi.Models;
 
 namespace blogApi.Repositories
 {
-    public class UserRepository : IUserRepository
+    public class UserRepository : RepositoryBase<User>, IUserRepository
     {
+        public UserRepository(BlogContext context, DbSet<User> dbSet) : base(context, dbSet)
+        {
+        }
+
         /// <summary>
         /// Retorna um usuario do 'banco'
         /// </summary>
         /// <param name="username"></param>
         /// <param name="password"></param>
         /// <returns></returns>
-        public async Task<User> GetUser(string username, string password) /* : IRepositoryBase<User> */
+        public async Task<User> VerifyUser(string username, string password) /* : IRepositoryBase<User> */
         {
             // comando só para "habilitar" o async neste caso
             var f = await File.ReadAllLinesAsync("arquivonulo.txt");
@@ -38,9 +43,8 @@ namespace blogApi.Repositories
         /// <returns></returns>
         public bool CreateUser(User user)
         {
-            //context.add(user);
-            //return context.saveChanges() > 0;
-            return true;
+            Context.Add(user);
+            return Context.SaveChanges() > 0;
         }
     }
 }

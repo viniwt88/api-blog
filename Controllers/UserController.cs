@@ -1,11 +1,8 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using blogApi.Interfaces.Repositories;
+using blogApi.Interfaces.Services;
+using blogApi.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using blogApi.Interfaces.Repositories;
-using blogApi.Models;
 
 namespace blogApi.Controllers
 {
@@ -13,11 +10,11 @@ namespace blogApi.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        private readonly IUserRepository _userRepository;
+        private readonly IUserService _userService;
 
-        public UserController(IUserRepository userRepository)
+        public UserController(IUserService userService)
         {
-            _userRepository = userRepository;   
+            _userService = userService;
         }
 
         [HttpPost]
@@ -28,7 +25,7 @@ namespace blogApi.Controllers
             {
                 // ValidarUsuario(User)
 
-                var success = _userRepository.CreateUser(user);
+                var success = _userService.CreateUser(user);
 
                 if (success)
                 {
