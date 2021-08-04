@@ -61,11 +61,19 @@ namespace blogApi
 
             // inject de serviços
             services.AddScoped<ITokenService, TokenService>();
+            services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IPostService, PostService>();
+            services.AddScoped<IPhotoService, PhotoService>();
+            services.AddScoped<IAlbumService, AlbumService>();
+            services.AddScoped<ITokenService, TokenService>();
 
             // inject de repositorios
             services.AddScoped<IUserRepository, UserRepository>();
-
-
+            services.AddScoped<IPostRepository, PostRepository>();
+            services.AddScoped<ICommentRepository, CommentRepository>();
+            services.AddScoped<IPhotoRepository, PhotoRepository>();
+            services.AddScoped<IAlbumRepository, AlbumRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
