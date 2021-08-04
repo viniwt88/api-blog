@@ -16,5 +16,10 @@ namespace blogApi.Services
             _postRepository.Add(post);
             return _postRepository.Commit() > 0;
         }
+
+        public Post VisualizarPost(int id)
+        {
+            return _postRepository.GetById(id);
+        }
     }
 }

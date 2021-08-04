@@ -46,7 +46,43 @@ namespace blogApi.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest( new
+                return BadRequest(new
+                {
+                    success = false,
+                    message = ex.Message
+                });
+            }
+        }
+
+        [HttpGet]
+        [Route("post")]
+        [AllowAnonymous]
+        public IActionResult VisualizarPost([FromBody] int postId)
+        {
+            try
+            {
+                // validações....
+
+                var post = _postService.VisualizarPost(postId);
+
+                if (post == null)
+                {
+                    return Ok(new
+                    {
+                        success = true,
+                        message = "Post não encontrado...!"
+                    });
+                }
+
+                return Ok(new
+                {
+                    success = true,
+                    message = post
+                });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new
                 {
                     success = false,
                     message = ex.Message
